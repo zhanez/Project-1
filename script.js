@@ -13,3 +13,5 @@ $.ajax({
         // console.log(results);
         console.log(response);
     });
+
+    console.log("test");
