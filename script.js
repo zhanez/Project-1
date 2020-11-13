@@ -33,7 +33,20 @@ var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 //   https: console.log(response);
 // });
 
-$.ajax({
+var zeroSingle = document.getElementById("0-single");
+
+//this is where we'll get the individual's income tax info and call taxee for their rates
+var filingStatus = document.getElementById("filing-status").value;
+var taxBracket = document.getElementById("tax-bracket").value;
+var combinedStatusAndBracket =
+  "response." +
+  filingStatus +
+  ".income_tax_brackets[" +
+  taxBracket +
+  "]" +
+  ".marginal_rate";
+
+myTestResponse = $.ajax({
   url: "https://taxee.io/api/v2/federal/2020",
   headers: {
     Authorization:
@@ -41,10 +54,41 @@ $.ajax({
   },
   method: "GET",
 }).then(function (response) {
-  console.log(response);
+  // JSON.stringify(response.single.income_tax_brackets[0].marginal_rate);
+  // console.log(response);
+  console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
+  console.log(combinedStatusAndBracket);
+  // console.log(
+  //   JSON.parse(
+  //     "response." +
+  //       filingStatus +
+  //       ".income_tax_brackets[" +
+  //       taxBracket +
+  //       "]" +
+  //       ".marginal_rate"
+  //   )
+  // );
+  zeroSingle.prepend(
+    response.head_of_household.income_tax_brackets[0].marginal_rate
+  );
 });
 
-console.log("test");
+// console.log(filingStatus, taxBracket);
+// myTestResponse = $.ajax({
+//   url: "https://taxee.io/api/v2/federal/2020",
+//   headers: {
+//     Authorization:
+//       "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUElfS0VZX01BTkFHRVIiLCJodHRwOi8vdGF4ZWUuaW8vdXNlcl9pZCI6IjVmYWNhNGRiNTk0MGFlNjcxZGQwNDIzMiIsImh0dHA6Ly90YXhlZS5pby9zY29wZXMiOlsiYXBpIl0sImlhdCI6MTYwNTE0OTkxNX0.R0Czpcjn1O7E5vKecPOcDO8W6A5-KXF1I1U4xdxMhKA",
+//   },
+//   method: "GET",
+// }).then(function (response) {
+//   // JSON.stringify(response.single.income_tax_brackets[0].marginal_rate);
+//   // console.log(response);
+//   console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
+//   zeroSingle.prepend(
+//     response.head_of_household.income_tax_brackets[0].marginal_rate
+//   );
+// });
 
 //Start of what Martin is building
-//local storage
+//get the element info and start populating data!
