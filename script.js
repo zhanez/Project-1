@@ -84,6 +84,8 @@ myTestResponse = $.ajax({
   for (var i = 0; i < taxBracketArray.length; i++) {
     //create a table row (tr)
     var taxRateRowEl = $("<tr></tr>");
+    var rowHeaders = $("<th>Bracket " + i + "</th>");
+    taxRateRowEl.append(rowHeaders);
 
     for (var j = 0; j < filingStatusArray.length; j++) {
       //create a table cell (td) the innerText value should be called from the tax response
