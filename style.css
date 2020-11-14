@@ -10,4 +10,26 @@
 #davids-stock{
     background-color: brown;
 }
+.container-head {
+    background-color: darkorange;
 
+}
+
+#con-column{
+    background-color: darkmagenta;
+}
+
+#table-header{
+    background-color: blue;
+    width: 300%;
+
+}
+
+#table-pt1{
+    border-right: 100px;
+    border-width: 10px;
+    border-style: groove;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
