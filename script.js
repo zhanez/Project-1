@@ -27,20 +27,6 @@ var price = function(event){
 
 $("#btn1").on("click", price);  
 
-// var stockFormEl = $('#stock-form');
-// var stockListEl = $('#stock-list');
-
-// function handleStockSubmit(event) {
-//   event.preventDefault();
-
-//   var stockListItemEl = $('<li>');
-//   stockListItemEl.text(response.quote.latestPrice)
-
-//   stockListEl.append(stockListItemEl);
-
-//   $('input[name="ticker-input"]').val('');
-// }
-
 // end of what David is building
 
 //beginning of what Brian is building
@@ -79,41 +65,54 @@ myTestResponse = $.ajax({
   },
   method: "GET",
 }).then(function (response) {
-  // JSON.stringify(response.single.income_tax_brackets[0].marginal_rate);
-  // console.log(response);
   console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
   console.log(combinedStatusAndBracket);
-  // console.log(
-  //   JSON.parse(
-  //     "response." +
-  //       filingStatus +
-  //       ".income_tax_brackets[" +
-  //       taxBracket +
-  //       "]" +
-  //       ".marginal_rate"
-  //   )
-  // );
   zeroSingle.prepend(
     response.head_of_household.income_tax_brackets[0].marginal_rate
   );
+
+  //define the table divs as variable
+  var taxRateTableEl = $("#tax-rate-table");
+
+  //add the table header
+  var tableHeaderEl = $(
+    "<th></th><th>Single</th><th>Head of Household</th><th>Married</th><th>Married - Separated</th></tr>"
+  );
+  //dunno why this is needed for prepend but we give up. come back to it later.
+  taxRateTableEl.prepend(tableHeaderEl);
+
+  //create a loop to add a tr and td for each element in the table
+  //generate a td for each with a data-attribute
+  var filingStatusArray = [
+    "single",
+    "head_of_household",
+    "married",
+    "married-separated",
+  ];
+  var taxBracketArray = ["0", "1", "2", "3", "4", "5", "6"];
+
+  //generate a row for each tax bracket in a loop
+  for (var i = 0; i < taxBracketArray.length; i++) {
+    //create a table row (tr)
+    var taxRateRowEl = $("<tr></tr>");
+    var rowHeaders = $("<th>Bracket " + i + "</th>");
+    taxRateRowEl.append(rowHeaders);
+
+    for (var j = 0; j < filingStatusArray.length; j++) {
+      //create a table cell (td) the innerText value should be called from the tax response
+      var thisCellEl = $("<td>" + filingStatusArray[j] + "</td>");
+
+      //append the table cell into the table row
+      taxRateRowEl.append(thisCellEl);
+    }
+    //get the data from the data-attribute that was selected
+
+    //append the table row into the table
+    taxRateTableEl.append(taxRateRowEl);
+  }
 });
 
-// console.log(filingStatus, taxBracket);
-// myTestResponse = $.ajax({
-//   url: "https://taxee.io/api/v2/federal/2020",
-//   headers: {
-//     Authorization:
-//       "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJBUElfS0VZX01BTkFHRVIiLCJodHRwOi8vdGF4ZWUuaW8vdXNlcl9pZCI6IjVmYWNhNGRiNTk0MGFlNjcxZGQwNDIzMiIsImh0dHA6Ly90YXhlZS5pby9zY29wZXMiOlsiYXBpIl0sImlhdCI6MTYwNTE0OTkxNX0.R0Czpcjn1O7E5vKecPOcDO8W6A5-KXF1I1U4xdxMhKA",
-//   },
-//   method: "GET",
-// }).then(function (response) {
-//   // JSON.stringify(response.single.income_tax_brackets[0].marginal_rate);
-//   // console.log(response);
-//   console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
-//   zeroSingle.prepend(
-//     response.head_of_household.income_tax_brackets[0].marginal_rate
-//   );
-// });
+//use stored variable to calculate total profit from stock sale
 
 //Start of what Martin is building
 //get the element info and start populating data!
