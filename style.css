@@ -19,17 +19,33 @@
     background-color: darkmagenta;
 }
 
-#table-header{
-    background-color: blue;
-    width: 300%;
-
-}
-
 #table-pt1{
+    background-color: blue;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     border-right: 100px;
     border-width: 10px;
     border-style: groove;
     border-top: 0px;
     border-bottom: 0px;
     border-left: 0px;
+}
+.is-centered{
+    background-color: brown;
+}
+.spacer{
+    width: 20%;
+}
+
+.tablerow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+th{
+    font-size: 10px;
 }
