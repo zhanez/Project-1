@@ -1,7 +1,54 @@
-table,
-th,
-td,
-tr {
-  border: 1px solid black;
-  border-collapse: collapse;
+#davids-company {
+    background-color: aqua;
+}
+#davids-container1 {
+    background-color: black;
+}
+
+
+.hero-body{
+    background-color: rgb(111, 228, 95);
+}
+
+#davids-stock{
+    background-color: brown;
+}
+.container-head {
+    background-color: darkorange;
+
+}
+
+#con-column{
+    background-color: darkmagenta;
+}
+
+#table-pt1{
+    background-color: blue;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border-right: 100px;
+    border-width: 10px;
+    border-style: groove;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+}
+.is-centered{
+    background-color: brown;
+}
+.spacer{
+    width: 20%;
+}
+
+.tablerow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    
+}
+
+th{
+    font-size: 10px;
 }
