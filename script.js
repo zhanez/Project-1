@@ -1,22 +1,44 @@
 //Beginning of what David is building
-// var ticker = "aapl";
-// var queryURL =
-//   "https://cloud.iexapis.com/stable/stock/" +
-//   ticker +
-//   "/batch?types=quote,news&range=1m&last=10&token=pk_57959b017ffa47508ac2c7eff69d3b05";
 
-// $.ajax({
-//   url: queryURL,
-//   method: "GET",
-// }).then(function (response) {
-//   // var results = response.data;
-//   // console.log(results);
-//   console.log(response);
-// });
+var price = function(event){
+  event.preventDefault();
 
-// console.log("test");
+  var stockFormEl = $('#stock-form');
+  var stockListEl = $('#stock-list');
 
-//end of what David is building
+  var ticker = $("#ticker-input").val();
+  var queryURL =
+  "https://cloud.iexapis.com/stable/stock/" +
+  ticker +
+  "/batch?types=quote,news&range=1m&last=10&token=pk_57959b017ffa47508ac2c7eff69d3b05";
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  })
+    .then(function (response) {
+      console.log(response.quote.latestPrice);
+    
+      var tickerItemEl = $('<li>');
+      var stockListItemEl = $('<li>'); 
+      var deleteButton = $('<button class="deleteItem">Remove</button>')
+
+      stockListItemEl.text(response.quote.latestPrice);
+      tickerItemEl.text(response.quote.symbol);
+
+      stockListEl.append(tickerItemEl, stockListItemEl, deleteButton);
+  });  
+}
+
+function removeItem(event) {
+  var btnClicked = $(event.target);
+  btnClicked.parent('li').remove();
+}
+
+$(".deleteItem").on("click", removeItem);
+$("#btn1").on("click", price);  
+
+// end of what David is building
 
 //beginning of what Brian is building
 //send year to taxee.io and get tax brackets back
