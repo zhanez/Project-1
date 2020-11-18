@@ -33,7 +33,7 @@ var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 //   https: console.log(response);
 // });
 
-var zeroSingle = document.getElementById("0-single");
+// var zeroSingle = document.getElementById("0-single");
 
 //this is where we'll get the individual's income tax info and call taxee for their rates
 var filingStatus = document.getElementById("filing-status").value;
@@ -56,9 +56,9 @@ myTestResponse = $.ajax({
 }).then(function (response) {
   console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
   console.log(combinedStatusAndBracket);
-  zeroSingle.prepend(
-    response.head_of_household.income_tax_brackets[0].marginal_rate
-  );
+  // zeroSingle.prepend(
+  //   response.head_of_household.income_tax_brackets[0].marginal_rate
+  // );
 
   //define the table divs as variable
   var taxRateTableEl = $("#tax-rate-table");
@@ -73,11 +73,12 @@ myTestResponse = $.ajax({
   //create a loop to add a tr and td for each element in the table
   //generate a td for each with a data-attribute
   var filingStatusArray = [
-    "single",
-    "head_of_household",
-    "married",
-    "married-separated",
+    response.head_of_household,
+    response.married,
+    response.married_separately,
+    response.single,
   ];
+
   var taxBracketArray = ["0", "1", "2", "3", "4", "5", "6"];
 
   //generate a row for each tax bracket in a loop
@@ -86,10 +87,16 @@ myTestResponse = $.ajax({
     var taxRateRowEl = $("<tr></tr>");
     var rowHeaders = $("<th>Bracket " + i + "</th>");
     taxRateRowEl.append(rowHeaders);
+    // console.log(filingStatusArray[0]);
 
     for (var j = 0; j < filingStatusArray.length; j++) {
       //create a table cell (td) the innerText value should be called from the tax response
-      var thisCellEl = $("<td>" + filingStatusArray[j] + "</td>");
+      var thisCellEl = $(
+        "<td>" +
+          filingStatusArray[j].income_tax_brackets[i].marginal_rate +
+          "</td>"
+      );
+      console.log(filingStatusArray[0].income_tax_brackets[0].marginal_rate);
 
       //append the table cell into the table row
       taxRateRowEl.append(thisCellEl);
@@ -99,6 +106,7 @@ myTestResponse = $.ajax({
     //append the table row into the table
     taxRateTableEl.append(taxRateRowEl);
   }
+  console.log(response);
 });
 
 //use stored variable to calculate total profit from stock sale
