@@ -18,13 +18,24 @@ var price = function(event){
   })
     .then(function (response) {
       console.log(response.quote.latestPrice);
+    
+      var tickerItemEl = $('<li>');
+      var stockListItemEl = $('<li>'); 
+      var deleteButton = $('<button class="deleteItem">Remove</button>')
 
-      var stockListItemEl = $('<li>');
-      stockListItemEl.text(response.quote.latestPrice)
-      stockListEl.append(stockListItemEl);
-    });
+      stockListItemEl.text(response.quote.latestPrice);
+      tickerItemEl.text(response.quote.symbol);
+
+      stockListEl.append(tickerItemEl, stockListItemEl, deleteButton);
+  });  
 }
 
+function removeItem(event) {
+  var btnClicked = $(event.target);
+  btnClicked.parent('li').remove();
+}
+
+$(".deleteItem").on("click", removeItem);
 $("#btn1").on("click", price);  
 
 // end of what David is building
