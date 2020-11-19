@@ -39,6 +39,22 @@ $("#btn1").on("click", price);
 
 //end of what David is building
 
+
+//Local Storage
+
+// var stockFormEl = $("#davids-company");
+// var stockListEl = $("#davids-stock");
+
+var stocks = 
+
+// Put the object into storage
+localStorage.setItem('stock data', JSON.stringify(stocks));
+
+// Retrieve the object from storage
+var getBackStockData = localStorage.getItem('stocks');
+
+console.log('getBackStockData: ', JSON.parse(getBackStockData));
+
 var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 
 // var zeroSingle = document.getElementById("0-single");
