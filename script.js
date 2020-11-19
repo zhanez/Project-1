@@ -3,8 +3,8 @@
 var price = function (event) {
   event.preventDefault();
 
-  var stockFormEl = $("#davids-company");
-  var stockListEl = $("#davids-stock");
+  var stockFormEl = $("#colz1");
+  var stockListEl = $("#colz2");
 
   
 
@@ -49,6 +49,7 @@ function buy (event) {
     }).then(function (response) {
       localStorage.setItem("stockticker", response.quote.symbol);
       localStorage.setItem("stockprice", response.quote.latestPrice);
+      localStorage.setItem("quantity", $("#quantity-input"));
     
     });
 }
