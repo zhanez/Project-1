@@ -6,8 +6,6 @@ var price = function (event) {
   var stockFormEl = $("#colz1");
   var stockListEl = $("#colz2");
 
-  
-
   var ticker = $("#ticker-input").val();
   var queryURL =
     "https://cloud.iexapis.com/stable/stock/" +
@@ -34,7 +32,7 @@ var price = function (event) {
   });
 };
 
-function buy (event) {
+function buy(event) {
   event.preventDefault();
 
   var ticker = $("#ticker-input").val();
@@ -43,15 +41,14 @@ function buy (event) {
     ticker +
     "/batch?types=quote,news&range=1m&last=10&token=pk_57959b017ffa47508ac2c7eff69d3b05";
 
-    $.ajax({
-      url: queryURL,
-      method: "GET",
-    }).then(function (response) {
-      localStorage.setItem("stockticker", response.quote.symbol);
-      localStorage.setItem("stockprice", response.quote.latestPrice);
-      localStorage.setItem("quantity", $("#quantity-input"));
-    
-    });
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    localStorage.setItem("stockticker", response.quote.symbol);
+    localStorage.setItem("stockprice", response.quote.latestPrice);
+    localStorage.setItem("quantity", $("#quantity-input"));
+  });
 }
 
 $("#btn1").on("click", price);
@@ -59,36 +56,34 @@ $("#btn2").on("click", buy);
 
 //end of what David is building
 
-
 //Local Storage
 
 // var stockFormEl = $("#davids-company");
 // var stockListEl = $("#davids-stock");
 
-var stocks = 
-
-// Put the object into storage
-localStorage.setItem('stock data', JSON.stringify(stocks));
+var stocks =
+  // Put the object into storage
+  localStorage.setItem("stock data", JSON.stringify(stocks));
 
 // Retrieve the object from storage
-var getBackStockData = localStorage.getItem('stocks');
+var getBackStockData = localStorage.getItem("stocks");
 
-console.log('getBackStockData: ', JSON.parse(getBackStockData));
+console.log("getBackStockData: ", JSON.parse(getBackStockData));
 
 var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 
 // var zeroSingle = document.getElementById("0-single");
 
 //this is where we'll get the individual's income tax info and call taxee for their rates
-var filingStatus = document.getElementById("filing-status").value;
-var taxBracket = document.getElementById("tax-bracket").value;
-var combinedStatusAndBracket =
-  "response." +
-  filingStatus +
-  ".income_tax_brackets[" +
-  taxBracket +
-  "]" +
-  ".marginal_rate";
+// var filingStatus = document.getElementById("filing-status").value;
+// var taxBracket = document.getElementById("tax-bracket").value;
+// var combinedStatusAndBracket =
+//   "response." +
+//   filingStatus +
+//   ".income_tax_brackets[" +
+//   taxBracket +
+//   "]" +
+//   ".marginal_rate";
 
 myTestResponse = $.ajax({
   url: "https://taxee.io/api/v2/federal/2020",
@@ -99,7 +94,7 @@ myTestResponse = $.ajax({
   method: "GET",
 }).then(function (response) {
   console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
-  console.log(combinedStatusAndBracket);
+  // console.log(combinedStatusAndBracket);
 
   //define the table divs as variable
   var taxRateTableEl = $("#tax-rate-table");
@@ -113,44 +108,87 @@ myTestResponse = $.ajax({
 
   //create a loop to add a tr and td for each element in the table
   //generate a td for each with a data-attribute
-  var filingStatusArray = [
-    response.head_of_household,
-    response.married,
-    response.married_separately,
-    response.single,
-  ];
+  var filingStatusArray = [response.single, response.married];
 
   var taxBracketArray = ["0", "1", "2", "3", "4", "5", "6"];
 
+  //redoing the logic to populate into elements instead of generating
+  //elements dynamically with javascript
+  $("#col2-row2-btn").text(
+    `$` + response.single.income_tax_brackets[0].bracket
+  );
+  $("#col3-row2-btn").text(
+    `$` + response.married.income_tax_brackets[0].bracket
+  );
+  $("#col2-row3-btn").text(
+    `$` + response.single.income_tax_brackets[1].bracket
+  );
+  $("#col3-row3-btn").text(
+    `$` + response.married.income_tax_brackets[1].bracket
+  );
+  $("#col2-row4-btn").text(
+    `$` + response.single.income_tax_brackets[2].bracket
+  );
+  $("#col3-row4-btn").text(
+    `$` + response.married.income_tax_brackets[2].bracket
+  );
+  $("#col2-row5-btn").text(
+    `$` + response.single.income_tax_brackets[3].bracket
+  );
+  $("#col3-row5-btn").text(
+    `$` + response.married.income_tax_brackets[3].bracket
+  );
+  $("#col2-row6-btn").text(
+    `$` + response.single.income_tax_brackets[4].bracket
+  );
+  $("#col3-row6-btn").text(
+    `$` + response.married.income_tax_brackets[4].bracket
+  );
+  $("#col2-row7-btn").text(
+    `$` + response.single.income_tax_brackets[5].bracket
+  );
+  $("#col3-row7-btn").text(
+    `$` + response.married.income_tax_brackets[5].bracket
+  );
+  $("#col2-row8-btn").text(
+    `$` + response.single.income_tax_brackets[6].bracket
+  );
+  $("#col3-row8-btn").text(
+    `$` + response.married.income_tax_brackets[6].bracket
+  );
+
   //generate a row for each tax bracket in a loop
-  for (var i = 0; i < taxBracketArray.length; i++) {
-    //create a table row (tr)
-    var taxRateRowEl = $("<tr></tr>");
-    var rowHeaders = $("<th>Bracket " + i + "</th>");
-    taxRateRowEl.append(rowHeaders);
-    // console.log(filingStatusArray[0]);
+  //saving this in case we have more time to make the code dry
+  // for (var i = 0; i < taxBracketArray.length; i++) {
+  //   //create a table row (tr)
+  //   var taxRateRowEl = $("<tr></tr>");
+  //   var rowHeaders = $("<th>Bracket " + i + "</th>");
+  //   taxRateRowEl.append(rowHeaders);
+  //   // console.log(filingStatusArray[0]);
 
-    for (var j = 0; j < filingStatusArray.length; j++) {
-      //create a table cell (td) the innerText value should be called from the tax response
-      var thisCellEl = $(
-        "<td>" +
-          filingStatusArray[j].income_tax_brackets[i].marginal_rate +
-          "</td>"
-      );
-      console.log(filingStatusArray[0].income_tax_brackets[0].marginal_rate);
+  //   for (var j = 0; j < filingStatusArray.length; j++) {
+  //     //create a table cell (td) the innerText value should be called from the tax response
+  //     var thisCellEl = $(
+  //       "<td>" +
+  //         filingStatusArray[j].income_tax_brackets[i].marginal_rate +
+  //         "</td>"
+  //     );
+  //     console.log(filingStatusArray[0].income_tax_brackets[0].marginal_rate);
 
-      //append the table cell into the table row
-      taxRateRowEl.append(thisCellEl);
-    }
-    //get the data from the data-attribute that was selected
+  //     //append the table cell into the table row
+  //     taxRateRowEl.append(thisCellEl);
+  //   }
+  //   //get the data from the data-attribute that was selected
 
-    //append the table row into the table
-    taxRateTableEl.append(taxRateRowEl);
-  }
-  console.log(response);
+  //   //append the table row into the table
+  //   taxRateTableEl.append(taxRateRowEl);
+  // }
+  // console.log(response);
 });
 
 //use stored variable to calculate total profit from stock sale
 
 //Start of what Martin is building
 //get the element info and start populating data!
+
+// $("#col2-row2-btn").text("asdf");
