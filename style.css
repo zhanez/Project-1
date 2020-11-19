@@ -1,3 +1,10 @@
+body {
+    background-color: black;
+}
+
+
+
+
 #davids-company {
     background-color: aqua;
     color: black;
@@ -6,6 +13,13 @@
     background-color: black;
 }
 
+#colz1 {
+    background-color: goldenrod;
+}
+
+#colz2 {
+    background-color: rgb(111, 228, 95);
+}
 
 .hero-body{
     background-color: rgb(111, 228, 95);

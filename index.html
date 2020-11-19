@@ -16,28 +16,27 @@
               In and Out
             </h1>
             <h2 class="subtitle">
-              Hero 
+              Hero
             </h2>
           </div>
         </div>
-      </section>    
+      </section>
 <!-- HEADER -->
 
 <!--Stock price container -->
 <div class="container is-fluid">
   <div class="notification is-primary ourcontainer" id ="davids-container1">
       <div class="container is-fluid">
-        <div class="notification is-primary ourcontainer" id="davids-company">
-          This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any
-          viewport size.
-        </div>
-     </div>
-      <div class="container is-fluid">
-        <div class="notification is-primary ourcontainer" id="davids-stock">
-          This container is <strong>fluid</strong>: it will have a 32px gap on either side, on any
-          viewport size.
-        </div>
+        <div class="columns">
+          <div class="column" id = colz1>
+            First column
+          </div>
+          <div class="column" id = colz2>
+            Second column
+          </div>
       </div>
+
+      
       <form class="notification is-primary ourcontainer" id= "stock-form">
         <input type= "text" id= "ticker-input" name= "ticker">
         <button id= "btn1">Add Ticker</button>
@@ -47,10 +46,6 @@
         <input type= "text" id= "quantity-input">
         <button id= "btn2">Buy This Stock</button>
     </form>
-<!-- 
-    <form class="notification is-primary ourcontainer">
-        <button id= "btn3">Delete</button>
-    </form> -->
 
     </div>
     
@@ -113,60 +108,49 @@
               <table class= "table is-centered">
                 <tr class= "tablerow" id="table-header ">
                     <th class="spacer"></th>
-                    <th class= "buttoncontainer">  Single <br> </th>
-                    <th class= "buttoncontainer"> Head of <br> Household </th>
-                    <th class= "buttoncontainer">   Married <br></th>
-                    <th class= "buttoncontainer">   Married - <br> Separated </th>
+                    <th class= "buttoncontainer">  Single /<br>Head of <br> Household </th>
+                    <th class= "buttoncontainer"> Married /<br>Seperated</th>
                 </tr>
                 <tr class= "tablerow">
                     <th class= "buttoncontainer">Bracket 0</th>
                     <td class= "buttoncontainer" id="single-0"><button class="button">%</button></td>
                     <td class= "buttoncontainer" id="hoh-0" ><button class="button" >%</button></td>
-                    <td class= "buttoncontainer" id="0-married"><button class="button">%</button></td>
-                    <td class= "buttoncontainer" id="0-married-separated"><button class="button">%</button></td>
                 </tr>
                 <tr class= "tablerow">
                     <th class= "buttoncontainer"> Bracket 1</th>
                     <td class= "buttoncontainer" id="1-single"><button class="button">%</button></td>
                     <td class= "buttoncontainer" id="1-hoh"><button class="button">%</button></td>
-                    <td class= "buttoncontainer" id="1-married"><button class="button">%</button></td>
-                    <td class= "buttoncontainer" id="1-married-separated"><button class="button">%</button></td>
                 </tr>
                 <tr class= "tablerow">
                     <th>Bracket 2</th>
                     <td id="2-single"><button class="button">%</button></td>
                     <td id="2-hoh"><button class="button">%</button></td>
-                    <td id="2-married"><button class="button">%</button></td>
-                    <td id="2-married-separated"><button class="button">%</button></td>
+
                 </tr>
                 <tr class= "tablerow">
                     <th>Bracket 3</th>
                     <td id="3-single"><button class="button">%</button></td>
                     <td id="3-hoh"><button class="button">%</button></td>
-                    <td id="3-married"><button class="button">%</button></td>
-                    <td id="3-married-separated"><button class="button">%</button></td>
+
                 </tr>
                 <tr class= "tablerow">
                     <th>Bracket 4</th>
                     <td id="4-single"><button class="button">%</button></td>
                     <td id="4-hoh"><button class="button">%</button></td>
-                    <td id="4-married"><button class="button">%</button></td>
-                    <td id="4-married-separated"><button class="button">%</button></td>
+
                 </tr>
                 <tr class= "tablerow">
                     <th>Bracket 5</th>
                     <td id="5-single"><button class="button">%</button></td>
                     <td id="5-hoh"><button class="button">%</button></td>
-                    <td id="5-married"><button class="button">%</button></td>
-                    <td id="5-married-separated"><button class="button">%</button></td>
+
                 </tr>
                 <tr class= "tablerow">
                     <th>Bracket 6</th>
                     <td id="6-single"><button class="button">%</button></td>
 
                     <td id="6-hoh"><button class="button">%</button></td>
-                    <td id="6-married"><button class="button">%</button></td>
-                    <td id="6-married-separated"><button class="button">%</button></td>
+
                 </tr>
             </table>
             <!-- End Table one-->
