@@ -22,7 +22,6 @@ var price = function (event) {
 
     var tickerItemEl = $("<li>");
     var stockListItemEl = $("<li>");
-    var deleteButton = $('<button class="deleteItem">Remove</button>');
 
     stockListItemEl.text(response.quote.latestPrice);
     tickerItemEl.text(response.quote.symbol);
@@ -35,7 +34,27 @@ var price = function (event) {
   });
 };
 
+function buy (event) {
+  event.preventDefault();
+
+  var ticker = $("#ticker-input").val();
+  var queryURL =
+    "https://cloud.iexapis.com/stable/stock/" +
+    ticker +
+    "/batch?types=quote,news&range=1m&last=10&token=pk_57959b017ffa47508ac2c7eff69d3b05";
+
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+      localStorage.setItem("stockticker", response.quote.symbol);
+      localStorage.setItem("stockprice", response.quote.latestPrice);
+    
+    });
+}
+
 $("#btn1").on("click", price);
+$("#btn2").on("click", buy);
 
 //end of what David is building
 
