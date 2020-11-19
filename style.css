@@ -15,10 +15,14 @@ body {
 
 #colz1 {
     background-color: goldenrod;
+    margin-left: 10px;
+    margin-bottom: 50px;
 }
 
 #colz2 {
     background-color: rgb(111, 228, 95);
+    margin-left: 10px;
+    margin-bottom: 50px;
 }
 
 .hero-body{
