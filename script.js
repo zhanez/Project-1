@@ -96,67 +96,75 @@ myTestResponse = $.ajax({
   console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
   // console.log(combinedStatusAndBracket);
 
-  //define the table divs as variable
-  var taxRateTableEl = $("#tax-rate-table");
-
-  //add the table header
-  var tableHeaderEl = $(
-    "<th></th><th>Single</th><th>Head of Household</th><th>Married</th><th>Married - Separated</th></tr>"
-  );
-  //dunno why this is needed for prepend but we give up. come back to it later.
-  taxRateTableEl.prepend(tableHeaderEl);
-
-  //create a loop to add a tr and td for each element in the table
-  //generate a td for each with a data-attribute
-  var filingStatusArray = [response.single, response.married];
-
-  var taxBracketArray = ["0", "1", "2", "3", "4", "5", "6"];
+  // Create our number formatter.
+  var formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    // These options are needed to round to whole numbers
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 0,
+  });
 
   //redoing the logic to populate into elements instead of generating
   //elements dynamically with javascript
   $("#col2-row2-btn").text(
-    `$` + response.single.income_tax_brackets[0].bracket
+    formatter.format(response.single.income_tax_brackets[0].bracket)
   );
   $("#col3-row2-btn").text(
-    `$` + response.married.income_tax_brackets[0].bracket
+    formatter.format(response.married.income_tax_brackets[0].bracket)
   );
   $("#col2-row3-btn").text(
-    `$` + response.single.income_tax_brackets[1].bracket
+    formatter.format(response.single.income_tax_brackets[1].bracket)
   );
   $("#col3-row3-btn").text(
-    `$` + response.married.income_tax_brackets[1].bracket
+    formatter.format(response.married.income_tax_brackets[1].bracket)
   );
   $("#col2-row4-btn").text(
-    `$` + response.single.income_tax_brackets[2].bracket
+    formatter.format(response.single.income_tax_brackets[2].bracket)
   );
   $("#col3-row4-btn").text(
-    `$` + response.married.income_tax_brackets[2].bracket
+    formatter.format(response.married.income_tax_brackets[2].bracket)
   );
   $("#col2-row5-btn").text(
-    `$` + response.single.income_tax_brackets[3].bracket
+    formatter.format(response.single.income_tax_brackets[3].bracket)
   );
   $("#col3-row5-btn").text(
-    `$` + response.married.income_tax_brackets[3].bracket
+    formatter.format(response.married.income_tax_brackets[3].bracket)
   );
   $("#col2-row6-btn").text(
-    `$` + response.single.income_tax_brackets[4].bracket
+    formatter.format(response.single.income_tax_brackets[4].bracket)
   );
   $("#col3-row6-btn").text(
-    `$` + response.married.income_tax_brackets[4].bracket
+    formatter.format(response.married.income_tax_brackets[4].bracket)
   );
   $("#col2-row7-btn").text(
-    `$` + response.single.income_tax_brackets[5].bracket
+    formatter.format(response.single.income_tax_brackets[5].bracket)
   );
   $("#col3-row7-btn").text(
-    `$` + response.married.income_tax_brackets[5].bracket
+    formatter.format(response.married.income_tax_brackets[5].bracket)
   );
   $("#col2-row8-btn").text(
-    `$` + response.single.income_tax_brackets[6].bracket
+    formatter.format(response.single.income_tax_brackets[6].bracket)
   );
   $("#col3-row8-btn").text(
-    `$` + response.married.income_tax_brackets[6].bracket
+    formatter.format(response.married.income_tax_brackets[6].bracket)
   );
 
+  // //define the table divs as variable
+  // var taxRateTableEl = $("#tax-rate-table");
+
+  // //add the table header
+  // var tableHeaderEl = $(
+  //   "<th></th><th>Single</th><th>Head of Household</th><th>Married</th><th>Married - Separated</th></tr>"
+  // );
+  // //dunno why this is needed for prepend but we give up. come back to it later.
+  // taxRateTableEl.prepend(tableHeaderEl);
+
+  // //create a loop to add a tr and td for each element in the table
+  // //generate a td for each with a data-attribute
+  // var filingStatusArray = [response.single, response.married];
+
+  // var taxBracketArray = ["0", "1", "2", "3", "4", "5", "6"];
   //generate a row for each tax bracket in a loop
   //saving this in case we have more time to make the code dry
   // for (var i = 0; i < taxBracketArray.length; i++) {
