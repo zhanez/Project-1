@@ -3,11 +3,10 @@
 var price = function (event) {
   event.preventDefault();
 
-  stockFormEl.removeItem(this);
-  stockListEl.removeItem(this);
-
   var stockFormEl = $("#davids-company");
   var stockListEl = $("#davids-stock");
+
+  
 
   var ticker = $("#ticker-input").val();
   var queryURL =
@@ -28,26 +27,15 @@ var price = function (event) {
     stockListItemEl.text(response.quote.latestPrice);
     tickerItemEl.text(response.quote.symbol);
 
+    stockFormEl.empty();
+    stockListEl.empty();
+
     stockFormEl.append(tickerItemEl);
     stockListEl.append(stockListItemEl);
   });
 };
 
-// function removeItem(event) {
-//   var btnClicked = $(event.target);
-//   btnClicked.parent("li").remove();
-// }
-
-// function clearStockInfo(event) {
-//   var stockFormEl = $("#davids-company");
-//   var stockListEl = $("#davids-stock");
-
-//   stockFormEl.removeItem(this);
-//   stockListEl.removeItem(this);
-}
-
 $("#btn1").on("click", price);
-// $("#btn3").on("click", clearStockInfo);
 
 //end of what David is building
 
