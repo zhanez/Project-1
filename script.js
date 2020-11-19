@@ -3,8 +3,10 @@
 var price = function (event) {
   event.preventDefault();
 
-  var stockFormEl = $("#stock-form");
-  var stockListEl = $("#stock-list");
+  var stockFormEl = $("#davids-company");
+  var stockListEl = $("#davids-stock");
+
+  
 
   var ticker = $("#ticker-input").val();
   var queryURL =
@@ -25,7 +27,8 @@ var price = function (event) {
     stockListItemEl.text(response.quote.latestPrice);
     tickerItemEl.text(response.quote.symbol);
 
-    stockListEl.append(tickerItemEl, stockListItemEl, deleteButton);
+    stockFormEl.append(tickerItemEl);
+    stockListEl.append(stockListItemEl);
   });
 };
 
@@ -36,6 +39,8 @@ function removeItem(event) {
 
 $(".deleteItem").on("click", removeItem);
 $("#btn1").on("click", price);
+
+//end of what David is building
 
 var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 
