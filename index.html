@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-<!-- HEADER -->
-    <section class="hero">
-        <div class="hero-body">
-          <div class="container-head">
-            <h1 class="title">
-              In and Out
-            </h1>
-            <h2 class="subtitle">
-              Hero
-            </h2>
-          </div>
-        </div>
-      </section>
-<!-- HEADER -->
 
-<!--Stock price container -->
-<div class="container is-fluid">
-  <div class="notification is-primary ourcontainer" id ="davids-container1">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container-head">
+        <h1 class="title">
+          In and Out
+        </h1>
+        <h2 class="subtitle">
+          Hero
+        </h2>
+      </div>
+    </div>
+  </section>
+  <!-- HEADER -->
+
+  <!--Stock price container -->
+  <div class="container is-fluid">
+    <div class="notification is-primary ourcontainer" id="davids-container1">
       <div class="container is-fluid">
         <div class="columns">
-          <div class="column" id = colz1>
+          <div class="column" id=colz1>
             First column
           </div>
-          <div class="column" id = colz2>
+          <div class="column" id=colz2>
             Second column
           </div>
+        </div>
+
+
+        <form class="notification is-primary ourcontainer" id="stock-form">
+          <input type="text" id="ticker-input" name="ticker">
+          <button id="btn1">Add Ticker</button>
+        </form>
+
+        <form class="notification is-primary ourcontainer" id="stock-form">
+          <input type="text" id="quantity-input">
+          <button id="btn2">Buy This Stock</button>
+        </form>
+
       </div>
 
-      
-      <form class="notification is-primary ourcontainer" id= "stock-form">
-        <input type= "text" id= "ticker-input" name= "ticker">
-        <button id= "btn1">Add Ticker</button>
-    </form>
-
-    <form class="notification is-primary ourcontainer" id= "stock-form">
-        <input type= "text" id= "quantity-input">
-        <button id= "btn2">Buy This Stock</button>
-    </form>
-
     </div>
-    
-  </div>
-      <!--Stock price container -->
+    <!--Stock price container -->
 
-<!-- Search -->
-<!-- <div class="container is-fluid">
+    <!-- Search -->
+    <!-- <div class="container is-fluid">
   <div class="notification is-primary ourcontainer" id ="davids-container1">
     <div class="field">
       <p class="control has-icons-left">
@@ -93,65 +95,58 @@
       </div>
     </div>
   </div> -->
-      <!-- Search -->
+    <!-- Search -->
 
 
-<!-- Containers with two columns -->
+    <!-- Containers with two columns -->
 
-      <div class="container">
-        <div class="notification is-primary" id= "con-column">
-          <div class="columns">
-            <div class="column" id= "table-pt1">
+    <div class="container">
+      <div class="notification is-primary" id="con-column">
+        <div class="columns">
+          <div class="column" id="table-pt1">
             First column
-  
-              <!-- Table one -->
-              <table class= "table is-centered">
-                <tr class= "tablerow" id="table-header ">
-                    <th class="spacer"></th>
-                    <th class= "buttoncontainer">  Single /<br>Head of <br> Household </th>
-                    <th class= "buttoncontainer"> Married /<br>Seperated</th>
-                </tr>
-                <tr class= "tablerow">
-                    <th class= "buttoncontainer">Bracket 0</th>
-                    <td class= "buttoncontainer" id="single-0"><button class="button">%</button></td>
-                    <td class= "buttoncontainer" id="hoh-0" ><button class="button" >%</button></td>
-                </tr>
-                <tr class= "tablerow">
-                    <th class= "buttoncontainer"> Bracket 1</th>
-                    <td class= "buttoncontainer" id="1-single"><button class="button">%</button></td>
-                    <td class= "buttoncontainer" id="1-hoh"><button class="button">%</button></td>
-                </tr>
-                <tr class= "tablerow">
-                    <th>Bracket 2</th>
-                    <td id="2-single"><button class="button">%</button></td>
-                    <td id="2-hoh"><button class="button">%</button></td>
-
-                </tr>
-                <tr class= "tablerow">
-                    <th>Bracket 3</th>
-                    <td id="3-single"><button class="button">%</button></td>
-                    <td id="3-hoh"><button class="button">%</button></td>
-
-                </tr>
-                <tr class= "tablerow">
-                    <th>Bracket 4</th>
-                    <td id="4-single"><button class="button">%</button></td>
-                    <td id="4-hoh"><button class="button">%</button></td>
-
-                </tr>
-                <tr class= "tablerow">
-                    <th>Bracket 5</th>
-                    <td id="5-single"><button class="button">%</button></td>
-                    <td id="5-hoh"><button class="button">%</button></td>
-
-                </tr>
-                <tr class= "tablerow">
-                    <th>Bracket 6</th>
-                    <td id="6-single"><button class="button">%</button></td>
-
-                    <td id="6-hoh"><button class="button">%</button></td>
-
-                </tr>
+            <!-- Table one -->
+            <table class="table is-centered">
+              <tr class="tablerow" id="table-header ">
+                <th class="spacer"></th>
+                <th class="buttoncontainer"> Single /<br>Head of <br> Household </th>
+                <th class="buttoncontainer"> Married /<br>Seperated</th>
+              </tr>
+              <tr class="tablerow">
+                <th class="buttoncontainer">Bracket 0</th>
+                <td class="buttoncontainer"><button class="button" id="col2-row2-btn"></button></td>
+                <td class="buttoncontainer"><button class="button" id="col3-row2-btn">%</button></td>
+              </tr>
+              <tr class="tablerow">
+                <th class="buttoncontainer"> Bracket 1</th>
+                <td class="buttoncontainer"><button class="button" id="col2-row3-btn">%</button></td>
+                <td class="buttoncontainer"><button class="button" id="col3-row3-btn">%</button></td>
+              </tr>
+              <tr class="tablerow">
+                <th>Bracket 2</th>
+                <td><button class="button" id="col2-row4-btn">%</button></td>
+                <td><button class="button" id="col3-row4-btn">%</button></td>
+              </tr>
+              <tr class="tablerow">
+                <th>Bracket 3</th>
+                <td><button class="button" id="col2-row5-btn">%</button></td>
+                <td><button class="button" id="col3-row5-btn">%</button></td>
+              </tr>
+              <tr class="tablerow">
+                <th>Bracket 4</th>
+                <td><button class="button" id="col2-row6-btn">%</button></td>
+                <td><button class="button" id="col3-row6-btn">%</button></td>
+              </tr>
+              <tr class="tablerow">
+                <th>Bracket 5</th>
+                <td><button class="button" id="col2-row7-btn">%</button></td>
+                <td><button class="button" id="col3-row7-btn">%</button></td>
+              </tr>
+              <tr class="tablerow">
+                <th>Bracket 6</th>
+                <td><button class="button" id="col2-row8-btn">%</button></td>
+                <td><button class="button" id="col3-row8-btn">%</button></td>
+              </tr>
             </table>
             <!-- End Table one-->
           </div>
@@ -161,28 +156,33 @@
             Check list
 
 
-            <table class= "table is-centered">
-              <tr class= "tablerow" id="table-header ">
-                  <th class= "buttoncontainer">  Single /<br>Head of <br> Household </th>
-                  <th class= "buttoncontainer"> Married /<br>Seperated</th>
+            <table class="table is-centered">
+              <tr class="tablerow" id="table-header ">
+                <th class="buttoncontainer"> Single /<br>Head of <br> Household </th>
+                <th class="buttoncontainer"> Married /<br>Seperated</th>
               </tr>
-              <tr class= "tablerow">
-                  <td class= "buttoncontainer" id="single-0">%</button></td>
-                  <td class= "buttoncontainer" id="hoh-0" >%</button></td>
+              <tr class="tablerow">
+                <td class="buttoncontainer" id="single-0">%</button></td>
+                <td class="buttoncontainer" id="hoh-0">%</button></td>
               </tr>
             </table>
           </div>
         </div>
       </div>
-      </div>
+    </div>
+
+    <table id="tax-rate-table">
+
+
+      <!-- </table>
+    <input id="filing-status" value="single"></input>
+    <input id="tax-bracket" value="0"></input>
+    <input id="state" value="CA"></input> -->
 
 
 
 
-
-
-
-<!--Footer-->
+      <!--Footer-->
       <footer class="footer">
         <div class="content has-text-centered">
           <p>
@@ -192,11 +192,11 @@
           </p>
         </div>
       </footer>
-<!--Footer-->
+      <!--Footer-->
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="script.js"></script>
 </body>
 
 </html>
