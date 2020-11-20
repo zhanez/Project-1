@@ -101,17 +101,18 @@ $("#btn2").on("click", buy);
 console.log(localStorage.getItem("purchasedStocks"));
 console.log(purchasedStocks[0].stockSymbol);
 
+var stockTable = $("#table-header");
 var stockTable = $("#purchased-stock-table");
 //loop through the stocks and create a row for each
 for (var i = 0; i < purchasedStocks.length; i++) {
   var thisRow = $(
-    "<table class=table><tr class=table-row><td>" +
+    "<tr class=table-row><td>" +
       purchasedStocks[i].stockSymbol +
-      "</td><td>" +
+      "</td class=button-container><td>" +
       purchasedStocks[i].stockPrice +
-      "</td><td>" +
+      "</td class=button-container><td>" +
       purchasedStocks[i].quantity +
-      "</td></tr>"
+      "</td class=button-container></tr>"
   );
   stockTable.append(thisRow);
 }
