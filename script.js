@@ -1,5 +1,13 @@
 //Beginning of what David is building
 
+var purchasedStocks = [];
+var test = JSON.parse(localStorage.getItem("purchasedstocks"));
+console.log(test);
+
+if (test !== null) {
+  purchasedStocks= purchasedStocks.concat(test)
+}
+
 var price = function (event) {
   event.preventDefault();
 
@@ -18,7 +26,6 @@ var price = function (event) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    console.log(response.quote.latestPrice);
 
     var tickerItemEl = $("<li>");
     var stockListItemEl = $("<li>");
@@ -47,10 +54,16 @@ function buy (event) {
       url: queryURL,
       method: "GET",
     }).then(function (response) {
-      localStorage.setItem("stockticker", response.quote.symbol);
-      localStorage.setItem("stockprice", response.quote.latestPrice);
-      localStorage.setItem("quantity", $("#quantity-input"));
-    
+
+      var purchasedStockObject = {
+        stockSymbol: response.quote.symbol,
+        stockPrice: response.quote.latestPrice,
+        quantity: $("#quantity-input").val() 
+      }
+      purchasedStocks.push(purchasedStockObject);
+
+      localStorage.setItem("purchasedstocks", JSON.stringify(purchasedStocks));
+      
     });
 }
 
@@ -65,15 +78,13 @@ $("#btn2").on("click", buy);
 // var stockFormEl = $("#davids-company");
 // var stockListEl = $("#davids-stock");
 
-var stocks = 
-
 // Put the object into storage
-localStorage.setItem('stock data', JSON.stringify(stocks));
+// localStorage.setItem('stock data', JSON.stringify(stocks));
 
-// Retrieve the object from storage
-var getBackStockData = localStorage.getItem('stocks');
+// // Retrieve the object from storage
+// var getBackStockData = localStorage.getItem('stocks');
 
-console.log('getBackStockData: ', JSON.parse(getBackStockData));
+// console.log('getBackStockData: ', JSON.parse(getBackStockData));
 
 var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 
