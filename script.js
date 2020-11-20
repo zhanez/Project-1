@@ -109,9 +109,9 @@ for (var i = 0; i < purchasedStocks.length; i++) {
     "<tr class=table-row><td>" +
       purchasedStocks[i].stockSymbol +
       "</td class=button-container><td>" +
-      purchasedStocks[i].stockPrice +
-      "</td class=button-container><td>" +
       purchasedStocks[i].quantity +
+      "</td class=button-container><td>" +
+      purchasedStocks[i].stockPrice +
       "</td class=button-container></tr>"
   );
   stockTable.append(thisRow);
