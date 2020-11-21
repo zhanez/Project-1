@@ -1,4 +1,3 @@
-//Beginning of what David is building
 //javascript formatter will use USD currency with whole numbers
 // Create our number formatter.
 var formatter = new Intl.NumberFormat("en-US", {
@@ -106,8 +105,7 @@ $(function () {
 });
 $(function () {
   $("body").delegate(".sale-price", "keyup", function (event) {
-    // var salePriceSplit = this.id.split("-"); // split the string at the hyphen
-    // calcNetIncome(parseInt(salePriceSplit[1]), true); // after the split, the number is found in index 1
+    
     console.log(myBracket);
     //multiply the input value times quantity
     var thisSalePrice = $(this).val();
@@ -144,25 +142,8 @@ var indexTest = `"#ni-0"`;
 console.log(indexTest);
 function calcNetIncome(theIndex) {
   console.log(theIndex);
-  // $(indexTest).text("aaaa");
-  //put something into the appropriate row text
-  // $(`"#ni-` + theIndex + `"`).text("test my text");
-  // $("#ni-0").text("aaaa");
-  // $("#ni-0").siblings().text("asqwer");
 }
-// $("#ni-0").text("aaaa");
-// $("#ni- ")
-// console.log(purchasedParsedStocks);
-//save the table into an element variable
-// var puchasedTableEl = $(
-//   for(var i=0; i<purchasedStocks.length; i++){
-//   "<table class=table><tr class=table-row><td>" +
-//     purchasedStocks +
-//     "</td></tr></table>"
-//   }
-// );
-//append to the document
-// $("#purchased-stock-table").append(puchasedTableEl);
+
 var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 
 myTestResponse = $.ajax({
@@ -222,7 +203,6 @@ myTestResponse = $.ajax({
 });
 
 //Allows appending the last purchase directly from local storage
-//against Do not repeat methodology, but short on time.
 function addRowFromBuy() {
   var thisRow = $(
     "<tr class=tablerow><td>" +
