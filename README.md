@@ -27,12 +27,15 @@ We incorporated two different API’s into our project- IEX Cloud for pulling st
 --
 
 ## **Screenshots**
+![](assets/Capture.png)
+* This is an example of the functioning tax bracket table and portfolio table. This is how the user will determine what their expected profit will be.
 <br><br>
 
 --
 
 ## **Links**
-Deployed Link: 
+Deployed Link: https://zhanez.github.io/Project-1/<br>
+Github Repo: https://github.com/zhanez/Project-1
 <br><br>
 
 --
