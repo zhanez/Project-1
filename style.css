@@ -154,6 +154,7 @@ h2 {
 }
 
 input {
+  width: 60%;
   border-width: 0px;
   background-color: lightblue;
   font-size: 10px;
