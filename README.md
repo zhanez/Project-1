@@ -32,7 +32,8 @@ We incorporated two different API’s into our project- IEX Cloud for pulling st
 --
 
 ## **Links**
-Deployed Link: 
+Repo Link: https://github.com/zhanez/Project-1 
+Deployed Link: https://zhanez.github.io/Project-1/
 <br><br>
 
 --
