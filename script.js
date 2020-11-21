@@ -112,7 +112,10 @@ for (var i = 0; i < purchasedStocks.length; i++) {
 var myBracket;
 $(function () {
   $("body").delegate(".button", "click", function (event) {
+    $(".button").css("background-color", "white");
     $(this).css("background-color", "red");
+    //make all other sibling buttons white
+    $(this).parent().siblings().children().css("background-color", "white");
     // var myBracket = $(this).text();
     myBracket = parseFloat($(this).parent().parent().data("bracket"));
     console.log("myBracket1: ", myBracket);
