@@ -1,5 +1,7 @@
+
 body {
     background-color: black;
+
 }
 
 #row0col0 {
@@ -23,6 +25,7 @@ body {
     justify-content: center;
 }
 .table {
+    width: 100%;
     align-content: center;
 }
 
@@ -128,14 +131,18 @@ button {
     color: black;
 }
 
-.tablerow{
+input {
+    font-size: 5px;
+}
+ 
+.tablerow {
+    font-size: 5px;
     display: table;
     text-align: center;
-    width: 100%;
 }
 
 th, td {
-    width: 100%;
+    width: 16%;
 }
 
 th {
@@ -234,4 +241,8 @@ th {
 #col3-row8-btn {
     font-size: 8px;
     width: 50px;
+}
+
+#purchased-stock-table {
+    font-size: 5px;
 }
