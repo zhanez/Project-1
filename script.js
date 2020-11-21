@@ -67,21 +67,6 @@ function buy(event) {
 }
 $("#btn1").on("click", price);
 $("#btn2").on("click", buy);
-//end of what David is building
-//Local Storage
-// var stockFormEl = $("#davids-company");
-// var stockListEl = $("#davids-stock");
-// Put the object into storage
-// localStorage.setItem('stock data', JSON.stringify(stocks));
-// // Retrieve the object from storage
-// var getBackStockData = localStorage.getItem('stocks');
-// console.log('getBackStockData: ', JSON.parse(getBackStockData));
-// var stocks =
-// Put the object into storage
-// localStorage.setItem("stock data", JSON.stringify(stocks));
-// Retrieve the object from storage
-// var getBackStockData = localStorage.getItem("stocks");
-// console.log("getBackStockData: ", JSON.parse(getBackStockData));
 //grab the table out of local storage
 // purchasedParsedStocks = JSON.parse(localStorage.getItem("purchasedstocks"));
 // console.log(localStorage.getItem("purchasedStocks"));
