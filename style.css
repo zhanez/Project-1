@@ -1,76 +1,69 @@
-
 body {
-    background-color: lightcyan;
-
+  background-color: lightcyan;
 }
 
 #row0col0 {
-    text-align: justify;
+  text-align: justify;
 }
 
 #row0col1 {
-    text-align: justify;
+  text-align: justify;
 }
 
 #row0col2 {
-    text-align: justify;
+  text-align: justify;
 }
-
 
 .table.is-centered {
-    align-content: center;
-    justify-content: center;
+  align-content: center;
+  justify-content: center;
 }
 .table {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #davids-company {
-    background-color: lightcyan;
-    color: black;
+  background-color: lightcyan;
+  color: black;
 }
 #davids-container1 {
-    background-color: lightcyan;
-    align-content: center;
-    width: 100%;
+  background-color: lightcyan;
+  align-content: center;
+  width: 100%;
 }
 
 #colz1 {
-    background-color: navy;
-    border: 2px solid lightblue;
-    border-radius: 15px;
-    margin-left: 10px;
-    margin-bottom: 50px;
-    width: 200px;
-    max-height: 100px;
+  background-color: navy;
+  border: 2px solid lightblue;
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  width: 200px;
+  max-height: 100px;
 }
 
 #colz2 {
-    background-color: navy;
-    border: 2px solid lightblue;
-    border-radius: 15px;
-    margin-left: 10px;
-    margin-bottom: 50px;
-    width: 200px;
+  background-color: navy;
+  border: 2px solid lightblue;
+  border-radius: 15px;
+  margin-left: 10px;
+  margin-bottom: 50px;
+  width: 200px;
 }
 
-.hero-body{
-    background-color: lightblue;
+.hero-body {
+  background-color: lightblue;
 }
-
 
 .container-head {
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
-
-
-#davids-stock{
-    background-color: lightblue;
+#davids-stock {
+  background-color: lightblue;
 }
-
 
 /* .container {
     align-self: center;
@@ -80,211 +73,205 @@ body {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-} */ 
+} */
 
-
-#con-column{
-    width: 75%;
-    margin-left: auto;
-    margin-right: auto;
-    background-color: lightcyan;
+#con-column {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightcyan;
 }
 
 #table-pt1 {
-    background-color: lightblue;
-    border: 2px solid navy;
-    border-radius: 25px;
-    table-layout: auto;
-    width: 60%;
+  background-color: lightblue;
+  border: 2px solid navy;
+  border-radius: 25px;
+  table-layout: auto;
+  width: 60%;
 }
 
 .table-pt2 {
-    justify-content: center;
-    table-layout: fixed;
-    border: 2px solid navy;
-    border-radius: 25px;
-    background-color: lightblue;
-    margin-right: 20px;
+  justify-content: center;
+  table-layout: fixed;
+  border: 2px solid navy;
+  border-radius: 25px;
+  background-color: lightblue;
+  margin-right: 20px;
 }
 #boxset {
-    box-sizing: initial;
+  box-sizing: initial;
 }
 
 .column {
-    clear: both;
-    justify-content: center;
-    text-align: center;
+  clear: both;
+  justify-content: center;
+  text-align: center;
 }
 
 #table-column-1 {
-    width: 100%;
-    table-layout: auto;
+  width: 100%;
+  table-layout: auto;
 }
 
 #table-column-2 {
-    width: 100%;
-    display: table;
-    table-layout: fixed;
-    background-color: lightcyan;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  background-color: lightcyan;
 }
 
 .brianhead {
-    text-align: center;
-    font-size: 9px;
-    align-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
+  text-align: center;
+  font-size: 9px;
+  align-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 button {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 35px;
-    font-style: italic;
-    font-family: cursive;
+  text-align: center;
+  font-size: 35px;
+  font-style: italic;
+  font-family: cursive;
 }
 h2 {
-    text-align: center;
-    font-size: 15px;
-    font-style: italic;
-    font-family: cursive;
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  font-family: cursive;
 }
 
-
-
 .title.is-3 {
-    display: flex;
-    flex: auto;
-    clear: both;
-    text-align: center;
-    color: black;
+  display: flex;
+  flex: auto;
+  clear: both;
+  text-align: center;
+  color: black;
 }
 
 input {
-    border-width: 0px;
-    background-color: lightblue;
-    font-size: 10px;
-}
- 
-.tablerow {
-    font-size: 9px;
-    table-layout: auto;
-    align-content: space-between;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+  border-width: 0px;
+  background-color: lightblue;
+  font-size: 10px;
 }
 
+.tablerow {
+  font-size: 9px;
+  table-layout: auto;
+  align-content: space-between;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 th {
-    font-size: 10px;
+  font-size: 10px;
 }
 
-#ticker-input{
-    background-color: lightblue;
-    width: 125px;
+#ticker-input {
+  background-color: lightblue;
+  width: 125px;
 }
 
-#quantity-input{
-    background-color: lightblue;
-    width: 125px;
+#quantity-input {
+  background-color: lightblue;
+  width: 125px;
 }
 
-.notification.is-primary{
-    background-color: navy;
-    width: 200px;
+.notification.is-primary {
+  background-color: navy;
+  width: 200px;
 }
 
-#stock-form{
-    margin-left: auto;
-    margin-right: auto;
+#stock-form {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #table-header {
-    color:blue;
-    text-align: center;
+  color: blue;
+  text-align: center;
 }
 
-
 #col2-row2-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col3-row2-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col2-row3-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col3-row3-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col2-row4-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col3-row4-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col2-row5-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col3-row5-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col2-row6-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col3-row6-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col2-row7-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
-
 #col3-row7-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col2-row8-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #col3-row8-btn {
-    font-size: 8px;
-    width: 75%;
+  font-size: 8px;
+  width: 75%;
 }
 
 #purchased-stock-table {
-    font-size: 5px;
-    padding: 500px;
+  font-size: 5px;
+  padding: 500px;
 }
 
 #purch {
-    max-width: 80%;
+  max-width: 80%;
 }
