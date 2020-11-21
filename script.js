@@ -5,7 +5,7 @@ var test = JSON.parse(localStorage.getItem("purchasedstocks"));
 console.log(test);
 
 if (test !== null) {
-  purchasedStocks = purchasedStocks.concat(test);
+  purchasedStocks= purchasedStocks.concat(test)
 }
 
 var price = function (event) {
@@ -24,6 +24,7 @@ var price = function (event) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
+
     var tickerItemEl = $("<li>");
     var stockListItemEl = $("<li>");
 
@@ -47,27 +48,29 @@ function buy(event) {
     ticker +
     "/batch?types=quote,news&range=1m&last=10&token=pk_57959b017ffa47508ac2c7eff69d3b05";
 
+    $.ajax({
+      url: queryURL,
+      method: "GET",
+    }).then(function (response) {
+
+      var purchasedStockObject = {
+        stockSymbol: response.quote.symbol,
+        stockPrice: response.quote.latestPrice,
+        quantity: $("#quantity-input").val() 
+      }
+      purchasedStocks.push(purchasedStockObject);
+
+      localStorage.setItem("purchasedstocks", JSON.stringify(purchasedStocks));
+      
+    });
   $.ajax({
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    var purchasedStockObject = {
-      stockSymbol: response.quote.symbol,
-      stockPrice: response.quote.latestPrice,
-      quantity: $("#quantity-input").val(),
-    };
-    purchasedStocks.push(purchasedStockObject);
-
-    localStorage.setItem("purchasedstocks", JSON.stringify(purchasedStocks));
+    localStorage.setItem("stockticker", response.quote.symbol);
+    localStorage.setItem("stockprice", response.quote.latestPrice);
+    localStorage.setItem("quantity", $("#quantity-input"));
   });
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET",
-  // }).then(function (response) {
-  //   localStorage.setItem("stockticker", response.quote.symbol);
-  //   localStorage.setItem("stockprice", response.quote.latestPrice);
-  //   localStorage.setItem("quantity", $("#quantity-input"));
-  // });
 }
 
 $("#btn1").on("click", price);
@@ -87,48 +90,14 @@ $("#btn2").on("click", buy);
 // var getBackStockData = localStorage.getItem('stocks');
 
 // console.log('getBackStockData: ', JSON.parse(getBackStockData));
-// var stocks =
-// Put the object into storage
-// localStorage.setItem("stock data", JSON.stringify(stocks));
+var stocks =
+  // Put the object into storage
+  localStorage.setItem("stock data", JSON.stringify(stocks));
 
 // Retrieve the object from storage
-// var getBackStockData = localStorage.getItem("stocks");
+var getBackStockData = localStorage.getItem("stocks");
 
-// console.log("getBackStockData: ", JSON.parse(getBackStockData));
-
-//grab the table out of local storage
-// purchasedParsedStocks = JSON.parse(localStorage.getItem("purchasedstocks"));
-console.log(localStorage.getItem("purchasedStocks"));
-console.log(purchasedStocks[0].stockSymbol);
-
-var stockTable = $("#table-header");
-var stockTable = $("#purchased-stock-table");
-//loop through the stocks and create a row for each
-for (var i = 0; i < purchasedStocks.length; i++) {
-  var thisRow = $(
-    "<tr class=table-row><td>" +
-      purchasedStocks[i].stockSymbol +
-      "</td class=button-container><td>" +
-      purchasedStocks[i].stockPrice +
-      "</td class=button-container><td>" +
-      purchasedStocks[i].quantity +
-      "</td class=button-container></tr>"
-  );
-  stockTable.append(thisRow);
-}
-
-// console.log(purchasedParsedStocks);
-//save the table into an element variable
-// var puchasedTableEl = $(
-//   for(var i=0; i<purchasedStocks.length; i++){
-//   "<table class=table><tr class=table-row><td>" +
-//     purchasedStocks +
-//     "</td></tr></table>"
-//   }
-// );
-
-//append to the document
-// $("#purchased-stock-table").append(puchasedTableEl);
+console.log("getBackStockData: ", JSON.parse(getBackStockData));
 
 var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 
