@@ -87,10 +87,10 @@ for (var i = 0; i < purchasedStocks.length; i++) {
       id="sp-` +
       i +
       `" placeholder=$0.00 size=2></td>
-      <td class ="tax-i" placeholder="$0.00">taxP</td>
+      <td class ="tax-i" placeholder="$0.00">N/A</td>
       <td class ="net-i" id="ni-` +
       i +
-      `">netI</td></tr>`
+      `">N/A</td></tr>`
   );
   stockTable.append(thisRow);
 }
@@ -115,23 +115,26 @@ $(function () {
     calcNetIncome(parseInt(salePriceSplit[1]), true); // after the split, the number is found in index 1
     console.log(myBracket);
     //multiply the input value times quantity
-    // var rowQuantity = $(this).val();
     var thisSalePrice = $(this).val();
     console.log("thisSalePrice", thisSalePrice);
+
     var thisQty = $(this).parent().siblings(".qty-i").text();
     console.log("thisQty", thisQty);
+
     var thisPurchasePrice = $(this).parent().siblings(".paid-i").text();
     console.log("thisPurchasePrice", thisPurchasePrice);
+
     var thisTaxPaid =
-      (thisQty * thisSalePrice - thisQty * thisPurchasePrice) * myBracket;
+      (thisQty * thisSalePrice - thisQty * thisPurchasePrice) *
+      parseFloat(myBracket);
     console.log("thisTaxPaid", thisTaxPaid);
+    console.log("parsefloat myBracket", parseFloat(myBracket));
+
     var thisNetIncome =
-      $(this).val() * $(this).parent().siblings(".qty-i").text() -
-      $(this).parent().siblings(".paid-i").text();
+      thisSalePrice * thisQty - thisPurchasePrice * thisQty - thisTaxPaid;
+
     console.log("thisNetIncome", thisNetIncome);
-    // console.log("myBracket: ", myBracket, "thisNetIncome: ", thisNetIncome);
-    var thisTaxPaid = parseInt(myBracket * thisNetIncome);
-    // var thisTaxPaid = parseFloat(myBracket);
+
     console.log("thisTaxPaid: ", thisTaxPaid);
     $(this).parent().siblings(".tax-i").text(formatter.format(thisTaxPaid));
     console.log("myBracket: ", myBracket);
@@ -231,5 +234,4 @@ myTestResponse = $.ajax({
   $("#col3-row8-btn").text(
     formatter.format(response.married.income_tax_brackets[6].bracket)
   );
-
 });
