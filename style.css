@@ -1,9 +1,33 @@
+
 body {
     background-color: black;
+
 }
 
+#row0col0 {
+    text-align: justify;
+}
 
+#row0col1 {
+    text-align: justify;
+}
 
+#row0col2 {
+    text-align: justify;
+}
+
+#centerthistable {
+    align-content: center;
+}
+
+.table.is-centered {
+    align-content: center;
+    justify-content: center;
+}
+.table {
+    width: 100%;
+    align-content: center;
+}
 
 #davids-company {
     background-color: aqua;
@@ -11,18 +35,23 @@ body {
 }
 #davids-container1 {
     background-color: black;
+    align-content: center;
+    width: 100%;
 }
 
 #colz1 {
     background-color: goldenrod;
     margin-left: 10px;
     margin-bottom: 50px;
+    width: 200px;
+    max-height: 100px;
 }
 
 #colz2 {
     background-color: rgb(111, 228, 95);
     margin-left: 10px;
     margin-bottom: 50px;
+    width: 200px;
 }
 
 .hero-body{
@@ -32,42 +61,188 @@ body {
 #davids-stock{
     background-color: brown;
 }
+
 .container-head {
     background-color: darkorange;
-
 }
+
+/* .container {
+    align-self: center;
+    align-content: center;
+    /* align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+} */ 
+
 
 #con-column{
-    background-color: darkmagenta;
+    background-color: white;
 }
 
-#table-pt1{
-    background-color: blue;
-    width: 90%;
+#table-pt1 {
+    border-width: 3px;
+    border-color: blue;
+    border-style: groove;
+    width: 30%;
+}
+
+#table-pt2 {
+    justify-content: center;
+    border-width: 3px;
+    border-color: blue;
+    border-style: groove;
+    background-color: teal;
+    width: 30%;
+}
+
+
+.column {
+    clear: both;
+    justify-content: center;
+    text-align: center;
+}
+
+#table-column-1 {
+    background-color: chartreuse;
+}
+
+#table-column-2 {
+    background-color: orange;
+}
+
+
+.brianhead {
+    width: 16%;
+    text-align: center;
+    font-size: 5px;
+}
+
+button {
+    font-size: 10px;
+}
+
+.title.is-3 {
+    display: flex;
+    flex: auto;
+    clear: both;
+    text-align: center;
+    color: black;
+}
+
+input {
+    font-size: 5px;
+}
+ 
+.tablerow {
+    font-size: 5px;
+    display: table;
+    text-align: center;
+}
+
+th, td {
+    width: 16%;
+}
+
+th {
+    font-size: 10px;
+}
+
+#ticker-input{
+    width: 125px;
+}
+
+#quantity-input{
+    width: 125px;
+}
+
+.notification.is-primary{
+    background-color: crimson;
+    width: 200px;
+}
+
+#stock-form{
     margin-left: auto;
     margin-right: auto;
-    border-right: 100px;
-    border-width: 10px;
-    border-style: groove;
-    border-top: 0px;
-    border-bottom: 0px;
-    border-left: 0px;
-}
-.is-centered{
-    background-color: brown;
-}
-.spacer{
-    width: 20%;
 }
 
-.tablerow{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    
+#table-header {
+    color:blue;
+    text-align: center;
 }
 
-th{
-    font-size: 10px;
+#col2-row2-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row2-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row3-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row3-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row4-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row4-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row5-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row5-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row6-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row6-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row7-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+
+#col3-row7-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row8-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row8-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#purchased-stock-table {
+    font-size: 5px;
 }
