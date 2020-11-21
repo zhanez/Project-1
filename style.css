@@ -5,24 +5,26 @@ body {
 
 
 
-#davids-company {
-    background-color: aqua;
-    color: black;
-}
+
 #davids-container1 {
-    background-color: black;
+    background-color: brown;
+    align-content: center;
+    width: 100%;
 }
 
 #colz1 {
     background-color: goldenrod;
     margin-left: 10px;
     margin-bottom: 50px;
+    width: 200px;
+    max-height: 100px;
 }
 
 #colz2 {
     background-color: rgb(111, 228, 95);
     margin-left: 10px;
     margin-bottom: 50px;
+    width: 200px;
 }
 
 .hero-body{
@@ -70,4 +72,22 @@ body {
 
 th{
     font-size: 10px;
+}
+
+#ticker-input{
+    width: 125px;
+}
+
+#quantity-input{
+    width: 125px;
+}
+
+.notification.is-primary{
+    background-color: crimson;
+    width: 200px;
+}
+
+#stock-form{
+    margin-left: auto;
+    margin-right: auto;
 }
