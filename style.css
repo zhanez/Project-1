@@ -1,6 +1,6 @@
 
 body {
-    background-color: black;
+    background-color: lightcyan;
 
 }
 
@@ -16,9 +16,6 @@ body {
     text-align: justify;
 }
 
-#centerthistable {
-    align-content: center;
-}
 
 .table.is-centered {
     align-content: center;
@@ -26,21 +23,24 @@ body {
 }
 .table {
     width: 100%;
-    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #davids-company {
-    background-color: aqua;
+    background-color: lightcyan;
     color: black;
 }
 #davids-container1 {
-    background-color: black;
+    background-color: lightcyan;
     align-content: center;
     width: 100%;
 }
 
 #colz1 {
-    background-color: goldenrod;
+    background-color: navy;
+    border: 2px solid lightblue;
+    border-radius: 15px;
     margin-left: 10px;
     margin-bottom: 50px;
     width: 200px;
@@ -48,23 +48,29 @@ body {
 }
 
 #colz2 {
-    background-color: rgb(111, 228, 95);
+    background-color: navy;
+    border: 2px solid lightblue;
+    border-radius: 15px;
     margin-left: 10px;
     margin-bottom: 50px;
     width: 200px;
 }
 
 .hero-body{
-    background-color: rgb(111, 228, 95);
+    background-color: lightblue;
 }
 
-#davids-stock{
-    background-color: brown;
-}
 
 .container-head {
-    background-color: darkorange;
+    background-color: whitesmoke;
 }
+
+
+
+#davids-stock{
+    background-color: lightblue;
+}
+
 
 /* .container {
     align-self: center;
@@ -78,25 +84,31 @@ body {
 
 
 #con-column{
-    background-color: white;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightcyan;
 }
 
 #table-pt1 {
-    border-width: 3px;
-    border-color: blue;
-    border-style: groove;
-    width: 30%;
+    background-color: lightblue;
+    border: 2px solid navy;
+    border-radius: 25px;
+    table-layout: auto;
+    width: 60%;
 }
 
-#table-pt2 {
+.table-pt2 {
     justify-content: center;
-    border-width: 3px;
-    border-color: blue;
-    border-style: groove;
-    background-color: teal;
-    width: 30%;
+    table-layout: fixed;
+    border: 2px solid navy;
+    border-radius: 25px;
+    background-color: lightblue;
+    margin-right: 20px;
 }
-
+#boxset {
+    box-sizing: initial;
+}
 
 .column {
     clear: both;
@@ -105,23 +117,44 @@ body {
 }
 
 #table-column-1 {
-    background-color: chartreuse;
+    width: 100%;
+    table-layout: auto;
+    background-color: ;
 }
 
 #table-column-2 {
-    background-color: orange;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    background-color: lightcyan;
 }
 
-
 .brianhead {
-    width: 16%;
     text-align: center;
-    font-size: 5px;
+    font-size: 9px;
+    align-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button {
     font-size: 10px;
 }
+
+h1 {
+    text-align: center;
+    font-size: 35px;
+    font-style: italic;
+    font-family: cursive;
+}
+h2 {
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    font-family: cursive;
+}
+
+
 
 .title.is-3 {
     display: flex;
@@ -132,33 +165,37 @@ button {
 }
 
 input {
-    font-size: 5px;
+    border-width: 0px;
+    background-color: lightblue;
+    font-size: 10px;
 }
  
 .tablerow {
-    font-size: 5px;
-    display: table;
+    font-size: 9px;
+    table-layout: auto;
+    align-content: space-between;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-th, td {
-    width: 16%;
-}
 
 th {
     font-size: 10px;
 }
 
 #ticker-input{
+    background-color: lightblue;
     width: 125px;
 }
 
 #quantity-input{
+    background-color: lightblue;
     width: 125px;
 }
 
 .notification.is-primary{
-    background-color: crimson;
+    background-color: navy;
     width: 200px;
 }
 
@@ -172,77 +209,83 @@ th {
     text-align: center;
 }
 
+
 #col2-row2-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col3-row2-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col2-row3-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col3-row3-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col2-row4-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col3-row4-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col2-row5-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col3-row5-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col2-row6-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col3-row6-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col2-row7-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 
 #col3-row7-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col2-row8-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #col3-row8-btn {
     font-size: 8px;
-    width: 50px;
+    width: 75%;
 }
 
 #purchased-stock-table {
     font-size: 5px;
+    padding: 500px;
+}
+
+#purch {
+    max-width: 80%;
 }

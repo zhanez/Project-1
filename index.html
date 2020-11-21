@@ -15,10 +15,10 @@
     <div class="hero-body">
       <div class="container-head">
         <h1 class="title">
-          In and Out
+          In-and-Out
         </h1>
         <h2 class="subtitle">
-          Hero
+          Stocks
         </h2>
       </div>
     </div>
@@ -31,21 +31,21 @@
       <div class="container is-fluid">
         <div class="columns">
           <div class="column" id=colz1>
-           First column
+           Company Ticker
           </div>
           <div class="column" id=colz2>
-            Second column
+            Stock Price
           </div>
         </div>
 
 
         <form class="notification is-primary ourcontainer" id="stock-form">
-          <input type="text" placeholder= "Ex: aapl, tsla" id="ticker-input" name="ticker">
+          <input type="text" id="ticker-input" name="ticker">
           <button id="btn1">Add Ticker</button>
         </form>
 
         <form class="notification is-primary ourcontainer" id="stock-form">
-          <input type="text" placeholder= "Ex: 3" id="quantity-input">
+          <input type="text" id="quantity-input">
           <button id="btn2">Buy This Stock</button>
         </form>
 
@@ -100,14 +100,15 @@
 
     <!-- Containers with two columns -->
 
-    <div class="container is-centered">
-      <div class="notification is-primary is-centered" id="con-column">
+    <div class="container is-centered" id = "boxset">
+      <div class="notification is-primary" id="con-column">
         <div class="columns is-centered">
           <div class="column is-centered" id="table-column-1">
+            
             <h3 class="title is-3">Federal Tax Table</h3>
             <!-- Table one -->
             <table class="table is-centered" id="table-pt1">
-              <tr class="tablerow" id="table-header ">
+              <tr class="tablerow table-header">
                 <th class="spacer" id="row0col0"><strong>Federal<br>Taxes</strong></th>
                 <th class="buttoncontainer" id="row0col1"> Single /<br>Head of <br> Household </th>
                 <th class="buttoncontainer" id="row0col2"> Married /<br>Seperated</th>
@@ -149,15 +150,15 @@
               </tr>
             </table>
             <!-- End Table one-->
-          </div>
-
+         
+        </div>
 
           <div class="column is-centered" id="table-column-2">
             <h3 class="title is-3">Stock Purchase Info</h3>
 
             <!-- <table class="table is-centered" id="table-pt2"> -->
-            <table class="table is-centered" id="purchased-stock-table">
-              <tr class="tablerow" id="table-header">
+            <table class="table is-centered table-pt2" id="purchased-stock-table">
+              <tr class="tablerow table-header">
                 <th class="brianhead"> Ticker </th>
                 <th class="brianhead"> Quantity <br>Purchased</th>
                 <th class="brianhead"> Purchase <br>Price </th>
@@ -186,7 +187,7 @@
 
 
       <!--Footer-->
-      <footer class="footer">
+      <footer class="footer" id = "boxset">
         <div class="content has-text-centered">
           <p>
             <strong>In&Out</strong> by Pod10, the greatest Pod</a>. The website content
