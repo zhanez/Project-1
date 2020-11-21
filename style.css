@@ -155,6 +155,7 @@ h2 {
 
 input {
   width: 60%;
+  padding-left: 30%;
   border-width: 0px;
   background-color: lightblue;
   font-size: 10px;
