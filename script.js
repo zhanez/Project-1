@@ -92,7 +92,7 @@ var myBracket;
 $(function () {
   $("body").delegate(".button", "click", function (event) {
     $(".button").css("background-color", "white");
-    $(this).css("background-color", "red");
+    $(this).css("background-color", "#00ccff");
     //make all other sibling buttons white
     $(this).parent().siblings().children().css("background-color", "white");
     // var myBracket = $(this).text();
