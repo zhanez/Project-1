@@ -7,6 +7,12 @@ One of the key components of being a successful investor is being an informed in
 
 --
 
+## **Technologies Used**
+We incorporated two different API’s into our project- IEX Cloud for pulling stock information and Taxee to pull current US income tax brackets. We decided to use Bulma as a CSS framework because it seemed like a user friendly option for novice coders.
+<br><br>
+
+--
+
 ## **Usage** 
 
 * Near the top of the page, the user will find two form entries with an accompanying search and buy button. 
@@ -15,9 +21,22 @@ One of the key components of being a successful investor is being an informed in
 
 * Clicking the buy button will add the desired amount and the last recorded price of the stock to their "portfolio".
 
-* There is a tax bracket table on the page that the user will use to determine the rate that their sale will be taxed. They will view whichever marital status column applies to them, they will choose the button that is less than or equal to their gross yearly income, and they will press that button to apply it to their equation. In their portfolio table, they will enter what price they are wanting to sell each share at in the form and the table will automatically calculate the amount they will pay in tax and what their expected income will be. <br><br>
+* There is a tax bracket table on the page that the user will use to determine the rate that their sale will be taxed. They will view whichever marital status column applies to them, they will choose the button that is less than or equal to their gross yearly income, and they will press that button to apply it to their equation. In their portfolio table, they will enter what price they are wanting to sell each share at in the form and the table will automatically calculate the amount they will pay in tax and what their expected income will be. 
+<br><br>
 
 --
+
+## **Screenshots**
+<br><br>
+
+--
+
+## **Links**
+Deployed Link: 
+<br><br>
+
+--
+
 ## **License**
 
 MIT License 

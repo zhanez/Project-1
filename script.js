@@ -105,7 +105,6 @@ $(function () {
 });
 $(function () {
   $("body").delegate(".sale-price", "keyup", function (event) {
-    
     console.log(myBracket);
     //multiply the input value times quantity
     var thisSalePrice = $(this).val();
