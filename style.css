@@ -2,8 +2,29 @@ body {
     background-color: black;
 }
 
+#row0col0 {
+    text-align: justify;
+}
 
+#row0col1 {
+    text-align: justify;
+}
 
+#row0col2 {
+    text-align: justify;
+}
+
+#centerthistable {
+    align-content: center;
+}
+
+.table.is-centered {
+    align-content: center;
+    justify-content: center;
+}
+.table {
+    align-content: center;
+}
 
 #davids-company {
     background-color: aqua;
@@ -32,42 +53,162 @@ body {
 #davids-stock{
     background-color: brown;
 }
+
 .container-head {
     background-color: darkorange;
-
 }
+
+.container {
+    align-self: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 #con-column{
-    background-color: darkmagenta;
+    background-color: white;
 }
 
-#table-pt1{
-    background-color: blue;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    border-right: 100px;
-    border-width: 10px;
+#table-pt1 {
+    border-width: 3px;
+    border-color: blue;
     border-style: groove;
-    border-top: 0px;
-    border-bottom: 0px;
-    border-left: 0px;
+    width: 30%;
 }
-.is-centered{
-    background-color: brown;
+
+#table-pt2 {
+    justify-content: center;
+    border-width: 3px;
+    border-color: blue;
+    border-style: groove;
+    background-color: teal;
+    width: 30%;
 }
-.spacer{
-    width: 20%;
+
+
+.column {
+    clear: both;
+    justify-content: center;
+    text-align: center;
+}
+
+#table-column-1 {
+    background-color: chartreuse;
+}
+
+#table-column-2 {
+    background-color: orange;
+}
+
+
+.brianhead {
+    width: 16%;
+    text-align: center;
+    font-size: 5px;
+}
+
+button {
+    font-size: 10px;
+}
+
+.title.is-3 {
+    display: flex;
+    flex: auto;
+    clear: both;
+    text-align: center;
+    color: black;
 }
 
 .tablerow{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    display: table;
+    text-align: center;
     width: 100%;
-    
 }
 
-th{
+th, td {
+    width: 100%;
+}
+
+th {
     font-size: 10px;
+}
+
+#table-header {
+    color:blue;
+    text-align: center;
+}
+
+#col2-row2-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row2-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row3-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row3-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row4-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row4-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row5-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row5-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row6-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row6-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row7-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+
+#col3-row7-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col2-row8-btn {
+    font-size: 8px;
+    width: 50px;
+}
+
+#col3-row8-btn {
+    font-size: 8px;
+    width: 50px;
 }
