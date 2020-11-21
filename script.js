@@ -55,25 +55,19 @@ function buy(event) {
     };
     purchasedStocks.push(purchasedStockObject);
     localStorage.setItem("purchasedstocks", JSON.stringify(purchasedStocks));
+    addRowFromBuy();
   });
-  // $.ajax({
-  //   url: queryURL,
-  //   method: "GET",
-  // }).then(function (response) {
-  //   localStorage.setItem("stockticker", response.quote.symbol);
-  //   localStorage.setItem("stockprice", response.quote.latestPrice);
-  //   localStorage.setItem("quantity", $("#quantity-input"));
-  // });
 }
 $("#btn1").on("click", price);
 $("#btn2").on("click", buy);
 //grab the table out of local storage
-// purchasedParsedStocks = JSON.parse(localStorage.getItem("purchasedstocks"));
-// console.log(localStorage.getItem("purchasedStocks"));
+
 console.log(purchasedStocks[0].stockSymbol);
 var stockTable = $("#table-header");
 var stockTable = $("#purchased-stock-table");
 //loop through the stocks and create a row for each
+//currently only adds the stocks on page load
+//later, this should push to the dom on button click
 for (var i = 0; i < purchasedStocks.length; i++) {
   var thisRow = $(
     "<tr class=tablerow><td>" +
@@ -94,6 +88,7 @@ for (var i = 0; i < purchasedStocks.length; i++) {
   );
   stockTable.append(thisRow);
 }
+
 var myBracket;
 $(function () {
   $("body").delegate(".button", "click", function (event) {
@@ -111,8 +106,8 @@ $(function () {
 });
 $(function () {
   $("body").delegate(".sale-price", "keyup", function (event) {
-    var salePriceSplit = this.id.split("-"); // split the string at the hyphen
-    calcNetIncome(parseInt(salePriceSplit[1]), true); // after the split, the number is found in index 1
+    // var salePriceSplit = this.id.split("-"); // split the string at the hyphen
+    // calcNetIncome(parseInt(salePriceSplit[1]), true); // after the split, the number is found in index 1
     console.log(myBracket);
     //multiply the input value times quantity
     var thisSalePrice = $(this).val();
@@ -169,17 +164,7 @@ function calcNetIncome(theIndex) {
 //append to the document
 // $("#purchased-stock-table").append(puchasedTableEl);
 var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
-// var zeroSingle = document.getElementById("0-single");
-//this is where we'll get the individual's income tax info and call taxee for their rates
-// var filingStatus = document.getElementById("filing-status").value;
-// var taxBracket = document.getElementById("tax-bracket").value;
-// var combinedStatusAndBracket =
-//   "response." +
-//   filingStatus +
-//   ".income_tax_brackets[" +
-//   taxBracket +
-//   "]" +
-//   ".marginal_rate";
+
 myTestResponse = $.ajax({
   url: "https://taxee.io/api/v2/federal/2020",
   headers: {
@@ -189,7 +174,7 @@ myTestResponse = $.ajax({
   method: "GET",
 }).then(function (response) {
   console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
-  // console.log(combinedStatusAndBracket);
+
   //redoing the logic to populate into elements instead of generating
   //elements dynamically with javascript
   $("#col2-row2-btn").text(
@@ -235,3 +220,26 @@ myTestResponse = $.ajax({
     formatter.format(response.married.income_tax_brackets[6].bracket)
   );
 });
+
+//Allows appending the last purchase directly from local storage
+//against Do not repeat methodology, but short on time.
+function addRowFromBuy() {
+  var thisRow = $(
+    "<tr class=tablerow><td>" +
+      purchasedStocks[purchasedStocks.length - 1].stockSymbol +
+      `</td class=button-container><td class="qty-i">` +
+      purchasedStocks[purchasedStocks.length - 1].quantity +
+      `</td><td class=paid-i>` +
+      purchasedStocks[purchasedStocks.length - 1].stockPrice +
+      `</td >
+      <td><input class="sale-price" 
+      id="sp-` +
+      i +
+      `" placeholder=$0.00 size=2></td>
+      <td class ="tax-i" placeholder="$0.00">N/A</td>
+      <td class ="net-i" id="ni-` +
+      i +
+      `">N/A</td></tr>`
+  );
+  stockTable.append(thisRow);
+}
