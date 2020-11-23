@@ -7,12 +7,16 @@ var formatter = new Intl.NumberFormat("en-US", {
   minimumFractionDigits: 0,
   maximumFractionDigits: 0,
 });
+
+//create a purchased stocks array and pull anything saved from local storage
 var purchasedStocks = [];
-var test = JSON.parse(localStorage.getItem("purchasedstocks"));
-console.log(test);
-if (test !== null) {
-  purchasedStocks = purchasedStocks.concat(test);
+var locallyStoredStocks = JSON.parse(localStorage.getItem("purchasedstocks"));
+
+if (locallyStoredStocks !== null) {
+  purchasedStocks = purchasedStocks.concat(locallyStoredStocks);
 }
+
+//pull the ticker and latest price from the iexapis api
 var price = function (event) {
   event.preventDefault();
   var stockFormEl = $("#colz1");
@@ -26,6 +30,7 @@ var price = function (event) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
+    //add the ticker and price to the page
     var tickerItemEl = $("<li>");
     var stockListItemEl = $("<li>");
     stockListItemEl.text(response.quote.latestPrice);
@@ -36,6 +41,8 @@ var price = function (event) {
     stockListEl.append(stockListItemEl);
   });
 };
+
+//push the stock, quantity and price into local storage
 function buy(event) {
   event.preventDefault();
   var ticker = $("#ticker-input").val();
@@ -57,16 +64,16 @@ function buy(event) {
     addRowFromBuy();
   });
 }
+
+//create a button for getting price from the api info and for purchasing the stock
 $("#btn1").on("click", price);
 $("#btn2").on("click", buy);
-//grab the table out of local storage
 
-console.log(purchasedStocks[0].stockSymbol);
+//set variables equal to the elements in the DOM
 var stockTable = $("#table-header");
 var stockTable = $("#purchased-stock-table");
+
 //loop through the stocks and create a row for each
-//currently only adds the stocks on page load
-//later, this should push to the dom on button click
 for (var i = 0; i < purchasedStocks.length; i++) {
   var thisRow = $(
     "<tr class=tablerow><td>" +
@@ -88,6 +95,7 @@ for (var i = 0; i < purchasedStocks.length; i++) {
   stockTable.append(thisRow);
 }
 
+//use event delegation to allow changing the appropriate button background color
 var myBracket;
 $(function () {
   $("body").delegate(".button", "click", function (event) {
@@ -97,55 +105,34 @@ $(function () {
     $(this).parent().siblings().children().css("background-color", "white");
     // var myBracket = $(this).text();
     myBracket = parseFloat($(this).parent().parent().data("bracket"));
-    console.log("myBracket1: ", myBracket);
-    console.log("using parsefloat" + myBracket);
-    //leaving room for future development to do a null check
-    //and to remove color from prior selection
   });
 });
+
+//use event delegation to set the appropriate tax paid and net income based on row
+//use keyup to dynamically populate the price on each key stroke rather than using a button
 $(function () {
   $("body").delegate(".sale-price", "keyup", function (event) {
-    console.log(myBracket);
-    //multiply the input value times quantity
+    //create variables for the elements in the current row where sale price is being updated
     var thisSalePrice = $(this).val();
-    console.log("thisSalePrice", thisSalePrice);
-
     var thisQty = $(this).parent().siblings(".qty-i").text();
-    console.log("thisQty", thisQty);
-
     var thisPurchasePrice = $(this).parent().siblings(".paid-i").text();
-    console.log("thisPurchasePrice", thisPurchasePrice);
-
+    //calculate the taxes and net income formatting as currency
     var thisTaxPaid =
       (thisQty * thisSalePrice - thisQty * thisPurchasePrice) *
       parseFloat(myBracket);
-    console.log("thisTaxPaid", thisTaxPaid);
-    console.log("parsefloat myBracket", parseFloat(myBracket));
-
     var thisNetIncome =
       thisSalePrice * thisQty - thisPurchasePrice * thisQty - thisTaxPaid;
-
-    console.log("thisNetIncome", thisNetIncome);
-
-    console.log("thisTaxPaid: ", thisTaxPaid);
     $(this).parent().siblings(".tax-i").text(formatter.format(thisTaxPaid));
-    console.log("myBracket: ", myBracket);
-    console.log(thisNetIncome);
-    console.log("this val", $(this).val());
-    console.log("qty: ", $(this).parent().siblings(".qty-i").text());
+
     //Update the value of the net income in the row
     $(this).parent().siblings(".net-i").text(formatter.format(thisNetIncome));
   });
 });
-var indexTest = `"#ni-0"`;
-console.log(indexTest);
-function calcNetIncome(theIndex) {
-  console.log(theIndex);
-}
 
+//call the taxee api to get current federal tax info
 var taxQueryURL = "https://taxee.io/api/v2/federal/2020";
 
-myTestResponse = $.ajax({
+$.ajax({
   url: "https://taxee.io/api/v2/federal/2020",
   headers: {
     Authorization:
@@ -153,8 +140,6 @@ myTestResponse = $.ajax({
   },
   method: "GET",
 }).then(function (response) {
-  console.log(response.head_of_household.income_tax_brackets[0].marginal_rate);
-
   //redoing the logic to populate into elements instead of generating
   //elements dynamically with javascript
   $("#col2-row2-btn").text(
