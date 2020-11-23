@@ -2,36 +2,54 @@ body {
   background-color: lightcyan;
 }
 
-#row0col0 {
-  text-align: justify;
+h1 {
+  text-align: center;
+  font-size: 35px;
+  font-style: italic;
+  font-family: cursive;
 }
 
-#row0col1 {
-  text-align: justify;
+h2 {
+  text-align: center;
+  font-size: 15px;
+  font-style: italic;
+  font-family: cursive;
 }
 
-#row0col2 {
-  text-align: justify;
-}
-
-.table.is-centered {
-  align-content: center;
-  justify-content: center;
-}
-.table {
+input {
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  border-width: 0px;
+  background-color: lightblue;
+  font-size: 10px;
 }
 
-#davids-company {
-  background-color: lightcyan;
-  color: black;
+th {
+  font-size: 10px;
 }
+
+.hero-body {
+  background-color: lightblue;
+}
+
+.container-head {
+  background-color: whitesmoke;
+}
+
+.notification.is-primary {
+  background-color: navy;
+  width: 200px;
+}
+
 #davids-container1 {
   background-color: lightcyan;
   align-content: center;
   width: 100%;
+}
+
+.column {
+  clear: both;
+  justify-content: center;
+  text-align: center;
 }
 
 #colz1 {
@@ -53,122 +71,9 @@ body {
   width: 200px;
 }
 
-.hero-body {
-  background-color: lightblue;
-}
-
-.container-head {
-  background-color: whitesmoke;
-}
-
-#davids-stock {
-  background-color: lightblue;
-}
-
-#con-column {
-  width: 75%;
+#stock-form {
   margin-left: auto;
   margin-right: auto;
-  background-color: lightcyan;
-}
-
-#table-pt1 {
-  background-color: lightblue;
-  border: 2px solid navy;
-  border-radius: 25px;
-  table-layout: auto;
-  width: 60%;
-}
-
-.table-pt2 {
-  justify-content: center;
-  table-layout: fixed;
-  border: 2px solid navy;
-  border-radius: 25px;
-  background-color: lightblue;
-  margin-right: 20px;
-}
-#boxset {
-  box-sizing: initial;
-}
-
-.column {
-  clear: both;
-  justify-content: center;
-  text-align: center;
-}
-
-#table-column-1 {
-  width: 100%;
-  table-layout: auto;
-}
-
-#table-column-2 {
-  width: 100%;
-  display: table;
-  table-layout: fixed;
-  background-color: lightcyan;
-}
-
-.brianhead {
-  text-align: center;
-  font-size: 9px;
-  align-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-button {
-  font-size: 10px;
-}
-
-h1 {
-  text-align: center;
-  font-size: 35px;
-  font-style: italic;
-  font-family: cursive;
-}
-h2 {
-  text-align: center;
-  font-size: 15px;
-  font-style: italic;
-  font-family: cursive;
-}
-
-.title.is-3 {
-  display: flex;
-  flex: auto;
-  clear: both;
-  text-align: center;
-  color: black;
-}
-
-input {
-  width: 100%;
-  border-width: 0px;
-  background-color: lightblue;
-  font-size: 10px;
-}
-
-#brianhead2 {
-  text-align: left;
-  font-size: 9px;
-  align-content: space-between;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.tablerow {
-  font-size: 9px;
-  table-layout: auto;
-  align-content: space-between;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-th {
-  font-size: 10px;
 }
 
 #ticker-input {
@@ -181,12 +86,54 @@ th {
   width: 125px;
 }
 
-.notification.is-primary {
-  background-color: navy;
-  width: 200px;
+#boxset {
+  box-sizing: initial;
 }
 
-#stock-form {
+#con-column {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightcyan;
+}
+
+#table-column-1 {
+  width: 100%;
+  table-layout: auto;
+}
+
+.title.is-3 {
+  display: flex;
+  flex: auto;
+  clear: both;
+  text-align: center;
+  color: black;
+}
+
+.table {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.table.is-centered {
+  align-content: center;
+  justify-content: center;
+}
+
+#table-pt1 {
+  background-color: lightblue;
+  border: 2px solid navy;
+  border-radius: 25px;
+  table-layout: auto;
+  width: 60%;
+}
+
+.tablerow {
+  font-size: 9px;
+  table-layout: auto;
+  align-content: space-between;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
@@ -194,7 +141,23 @@ th {
 #table-header {
   color: blue;
   text-align: center;
+}  
+
+button {
+  font-size: 10px;
 }
+
+#row0col0 {
+  text-align: justify;
+}  
+
+#row0col1 {
+  text-align: justify;
+}  
+
+#row0col2 {
+  text-align: justify;
+}  
 
 #col2-row2-btn {
   font-size: 8px;
@@ -266,11 +229,95 @@ th {
   width: 75%;
 }
 
+#table-column-2 {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  background-color: lightcyan;
+}  
+
+.table-pt2 {
+  justify-content: center;
+  table-layout: fixed;
+  border: 2px solid navy;
+  border-radius: 25px;
+  background-color: lightblue;
+  margin-right: 20px;
+}  
+
 #purchased-stock-table {
   font-size: 5px;
   padding: 500px;
 }
 
+.brianhead {
+  text-align: center;
+  font-size: 9px;
+  align-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}  
+
+#brianhead2 {
+  text-align: left;
+  font-size: 9px;
+  align-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+
+
+/*
+
+SEPERATOR FOR CSS CLEANUP .....................................................................................................................................................................................................................................
+
+*/
+
+
+
+
+
+
+
+/*
+
+SEPERATOR FOR Possible Garbage detected during BOM Audit.....................................................................................................................................................................................................................................
+
+*/
+
+
+
+
+#davids-company {
+  background-color: lightcyan;
+  color: black;
+}  
+
+
+#davids-stock {
+  background-color: lightblue;
+}  
+
+
 #purch {
   max-width: 80%;
 }
+
+
+
+
+/*
+
+SEPERATOR FOR Possible Garbage detected during BOM Audit.....................................................................................................................................................................................................................................
+
+*/
+
+
+
+
+
+
